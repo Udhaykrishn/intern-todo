@@ -15,7 +15,7 @@ export class TodoController {
 
     @Get()
     async getAllTodo(){
-        return this.service.getAll()
+        return this.service.()
     }
 
     @Patch()

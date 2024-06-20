@@ -11,7 +11,7 @@ export class TodoService {
         return this.repository.create(data)
     }
 
-    getTodo(){
+    getAll(){
         return this.repository.getAll()
     }
 }
