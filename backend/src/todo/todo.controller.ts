@@ -1,4 +1,4 @@
-import { Controller,Get,Body,Param,Post,Patch } from '@nestjs/common';
+import { Controller,Get,Body,Delete,Post,Patch } from '@nestjs/common';
 import { TodoService } from './todo.service';
 import { todoDto, updateDto } from './dto';
 
@@ -22,4 +22,10 @@ export class TodoController {
     async updateTodo(@Body() todoUpdate:updateDto){
         return this.service.updateTodo()
     }
+
+    @Delete()
+    async deleteTodo(){
+        return this.service.deleteTodo()
+    }
+
 }
