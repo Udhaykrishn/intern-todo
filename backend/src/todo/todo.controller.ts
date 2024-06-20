@@ -10,6 +10,6 @@ export class TodoController {
 
     @Post()
     async createTodo(@Body() todoList:todoDto){
-        
+        return this.service.create(todoList)
     }
 }
