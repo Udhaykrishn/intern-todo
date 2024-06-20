@@ -12,4 +12,9 @@ export class TodoController {
     async createTodo(@Body() todoList:todoDto){
         return this.service.create(todoList)
     }
+
+    @Get()
+    async getAllTodo(){
+        return this.service.getAll()
+    }
 }
