@@ -10,4 +10,8 @@ export class TodoRepository{
             data:data
         })
     }
+
+    getAll(){
+        return this.prsima.todo.findMany()
+    }
 }
