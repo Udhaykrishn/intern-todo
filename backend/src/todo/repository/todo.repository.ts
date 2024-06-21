@@ -2,6 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { PrismaService } from '../../prisma/prisma.service';
 import { todoDto, updateDto } from "../dto"; 
 
+@Injectable()
 export class TodoRepository{
     constructor(private readonly prsima:PrismaService){}
 
