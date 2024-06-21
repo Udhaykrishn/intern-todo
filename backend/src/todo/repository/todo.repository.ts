@@ -17,7 +17,8 @@ export class TodoRepository{
 
     updateTodo(userId:number,data:updateDto){
         return this.prsima.todo.update({
-            where:
+           where:{id:userId},
+           data:data
         })
     }
 }
