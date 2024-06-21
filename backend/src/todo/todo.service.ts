@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { TodoRepository } from './repository/todo.repository';
-import { todoDto } from './dto';
+import { todoDto, updateDto } from './dto';
 
 @Injectable()
 export class TodoService {
@@ -14,4 +14,13 @@ export class TodoService {
     getAll(){
         return this.repository.getAll()
     }
+
+    updateTodo(data:updateDto){
+        return this.repository.updateTodo()
+    }
+    
+    deleteTodo(){
+        return this.repository.deleteTodo()        
+    }
+    
 }
