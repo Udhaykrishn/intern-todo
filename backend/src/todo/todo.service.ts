@@ -19,8 +19,8 @@ export class TodoService {
         return this.repository.updateTodo(userId,data)
     }
     
-    deleteTodo(){
-        return this.repository.deleteTodo()        
+    deleteTodo(userId:number){
+        return this.repository.deleteTodo(userId)        
     }
     
 }
