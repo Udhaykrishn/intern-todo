@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from '../../prisma/prisma.service';
-import { todoDto } from "../dto";
+import { todoDto, updateDto } from "../dto";
 
 export class TodoRepository{
     constructor(private readonly prsima:PrismaService){}
@@ -13,5 +13,11 @@ export class TodoRepository{
 
     getAll(){
         return this.prsima.todo.findMany()
+    }
+
+    updateTodo(userId:number,data:updateDto){
+        return this.prsima.todo.update({
+            where:
+        })
     }
 }
