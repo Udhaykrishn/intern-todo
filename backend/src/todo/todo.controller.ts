@@ -1,4 +1,4 @@
-import { Controller,Get,Body,Delete,Post,Patch } from '@nestjs/common';
+import { Controller,Get,Body,Delete,Post,Patch, Param, ParseIntPipe } from '@nestjs/common';
 import { TodoService } from './todo.service';
 import { todoDto, updateDto } from './dto';
 
@@ -15,17 +15,17 @@ export class TodoController {
 
     @Get()
     async getAllTodo(){
-        return this.service.()
+        return this.service.getAll()
     }
 
-    @Patch()
-    async updateTodo(@Body() todoUpdate:updateDto){
-        return this.service.updateTodo()
+    @Patch(":userId")
+    async updateTodo(@Param('userId',ParseIntPipe ) userId:number,@Body() todoUpdate:updateDto){
+        return this.service.updateTodo(userId,todoUpdate)
     }
 
-    @Delete()
-    async deleteTodo(){
-        return this.service.deleteTodo()
+    @Delete(":userId")
+    async deleteTodo(@Param('userId',ParseIntPipe)userId:number){
+        return this.service.deleteTodo(userId)
     }
 
 }
