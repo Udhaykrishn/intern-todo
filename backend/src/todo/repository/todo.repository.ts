@@ -21,4 +21,10 @@ export class TodoRepository{
            data:data
         })
     }
+
+    deleteTodo(userId:number){
+        return this.prsima.todo.delete({
+            where:{id:userId}
+        })
+    }
 }
