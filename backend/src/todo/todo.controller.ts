@@ -18,6 +18,12 @@ export class TodoController {
         return this.service.getAll()
     }
 
+    @Get(":todoId")
+    async getTodoById(@Param("todoId") id:string){
+        return this.service.getTodoById(id)
+    }
+
+
     @Patch(":userId")
     async updateTodo(@Param('userId',ParseIntPipe ) userId:number,@Body() todoUpdate:updateDto){
         return this.service.updateTodo(userId,todoUpdate)
