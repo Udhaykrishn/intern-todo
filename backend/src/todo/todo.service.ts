@@ -10,6 +10,9 @@ export class TodoService {
     create(data:todoDto){
         return this.repository.create(data)
     }
+    getTodoById(id:string){
+        return this.repository.findOne(id)
+    }
 
     getAll(){
         return this.repository.getAll()
