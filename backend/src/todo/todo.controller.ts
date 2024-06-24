@@ -19,7 +19,7 @@ export class TodoController {
     }
 
     @Get(":todoId")
-    async getTodoById(@Param("todoId") id:string){
+    async getTodoById(@Param("todoId",ParseIntPipe) id:number){
         return this.service.getTodoById(id)
     }
 

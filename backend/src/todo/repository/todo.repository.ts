@@ -12,6 +12,12 @@ export class TodoRepository{
         })
     }
 
+    findOne(id:number){
+        return this.prsima.todo.findFirst({
+            where:{id}
+        })
+    }
+
     getAll(){
         return this.prsima.todo.findMany()
     }

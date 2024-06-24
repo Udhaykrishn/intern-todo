@@ -10,7 +10,7 @@ export class TodoService {
     create(data:todoDto){
         return this.repository.create(data)
     }
-    getTodoById(id:string){
+    getTodoById(id:number){
         return this.repository.findOne(id)
     }
 
